@@ -60,6 +60,7 @@ dependencies:
   chunked_uploader: ^1.1.0
   percent_indicator: ^4.2.5
   package_info_plus: ^8.3.0
+  image: ^4.5.4
 
 dev_dependencies:
   flutter_test:
