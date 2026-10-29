@@ -1,16 +1,64 @@
-# vodda_providers
+<div dir="rtl">
 
-A new Flutter project.
+# Vodda Providers — اپلیکیشن سمت خدمات‌دهنده
 
-## Getting Started
+<p align="center">
+  <img src="assets/images/splash.png" width="140" alt="Vodda Providers" />
+</p>
 
-This project is a starting point for a Flutter application.
+اپلیکیشن خدمات‌دهندگان پلتفرم **Vodda** — ثبت‌نام با احراز مدارک، مدیریت خدمات و نوبت‌ها، پیام‌رسانی با مشتریان و مشاهده درآمد.
 
-A few resources to get you started if this is your first Flutter project:
+> 📱 این ریپو **سمت خدمات‌دهنده** است؛ اپلیکیشن سمت مشتری در ریپوی [VoddaOld](https://github.com/Mhabib70/VoddaOld) نگهداری می‌شود.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+---
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## ✨ امکانات
+
+- **ثبت‌نام خدمات‌دهنده (ویزارد کامل)** — فرم اطلاعات ← انتخاب تخصص‌ها ← تعیین موقعیت روی نقشه ← آپلود مدارک و تصاویر ← تایید
+- **داشبورد مدیریت کار** — فهرست کارها (`my-works`)، جزئیات هر کار، اسناد سفارش‌ها و تصاویر
+- **زمان‌بندی هوشمند** — تعیین زمان‌های آزاد، زمان‌بندی هفتگی و تعطیلات (`MyTimes`)
+- **مدیریت خدمات** — لیست خدمات، سوالات متداول هر خدمت و گزینه‌های قیمت‌گذاری (`MyServices`)
+- **مالی** — لیست پرداخت‌ها و تسویه‌ها (`payments-list`)
+- **پیام‌رسانی داخلی** — صندوق پیام‌ها و گفتگوی متنی با مشتریان
+- **اعتبار حرفه‌ای** — رزومه خدمات‌دهنده، نظرات و امتیازات مشتریان
+- **ارتباط لحظه‌ای** — Socket.IO برای دریافت سفارش‌ها و پیام‌های زنده + آپلود تکه‌تکه فایل‌های حجیم (`chunked_uploader`)
+
+## 🏗 معماری
+
+ساختار لایه‌ای بر پایه **GetX**:
+
+```
+lib/
+├── UI/
+│   ├── Views/
+│   │   ├── Register/    # ویزارد ثبت‌نام (فرم · تخصص · نقشه · آپلود · تایید)
+│   │   ├── Main/        # داشبورد · کارها · پرداخت‌ها · پروفایل
+│   │   ├── User/        # ورود · پیام‌ها · MyServices · MyTimes · نظرات
+│   │   └── Components/  # ویجت‌های مشترک
+│   └── ...
+├── Logic/               # کنترلرهای GetX · Helpers · Models
+└── main.dart
+```
+
+## 🛠 تکنولوژی‌ها
+
+| لایه | ابزار |
+| --- | --- |
+| فریم‌ورک | Flutter 3 · Dart |
+| مدیریت حالت | GetX |
+| شبکه | dio · socket_io_client · chunked_uploader |
+| نقشه و مکان | flutter_map · geolocator · map_launcher |
+| پس‌زمینه و اعلان | flutter_background_service · awesome_notifications |
+| رسانه | image_picker · image_cropper · photo_view · assets_audio_player · flutter_svg |
+| ذخیره‌سازی | shared_preferences · device_info_plus |
+
+## 🚀 راه‌اندازی
+
+```bash
+git clone https://github.com/Mhabib70/VoddaProviders.git
+cd VoddaProviders
+flutter pub get
+flutter run
+```
+
+</div>
